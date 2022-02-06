@@ -2,7 +2,9 @@
 
 # Basics
 
-<card><table><col>Name - First		<><col>String	<><col>100<>
+<card><table><col><b>Data<><><col><b>Type<><><col><b>Length<><>
+<col> <>
+<col>Name - First		<><col>String	<><col>100<>
 <col>Name - Last<><col>String<><col>100<>
 <col>Name - Full<><col>String<><col>200<>
 <col> <>
@@ -16,7 +18,9 @@
 <col>Phone<><col>String<><col>15 <super><#>1<><><>
 <col> <><col>String<><col>50 <super><#>2<><><><><>
 
-<card><table><col>ID				<><col>Integer	<>
+<card><table><col><b>Data<><><col><b>Type<><><col><b>Length<><>
+<col> <>
+<col>ID				<><col>Integer	<>
 <col> <>
 <col>Date Time<><col>String<><col>19<>
 <col> <>
