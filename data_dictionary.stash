@@ -1,0 +1,192 @@
+# Data Dictionary
+
+# Basics
+
+<card><table><col>Name - First		<><col>String	<><col>100<>
+<col>Name - Last<><col>String<><col>100<>
+<col>Name - Full<><col>String<><col>200<>
+<col> <>
+<col>Address - Street<><col>String<><col>100<>
+<col>Address - City<><col>String<><col>100<>
+<col>Address - Zip<><col>String<><col>12<>
+<col>Address - Country<><col>String<><col>60<>
+<col> <>
+<col>Email<><col>String<><col>320<>
+<col> <>
+<col>Phone<><col>String<><col>15 <super><#>1<><><>
+<col> <><col>String<><col>50 <super><#>2<><><><><>
+
+<card><table><col>ID				<><col>Integer	<>
+<col> <>
+<col>Date Time<><col>String<><col>19<>
+<col> <>
+<col>File - Path<><col>String<><col>1024<>
+<col> <>
+<col>IP Address - IPV4<><col>Integer<><col>4 Bytes<>
+<col> <><col>String<><col>16<>
+<col> <>
+<col>IP Address - IPV6<><col>Integer<><col>16 Bytes<>
+<col><><col>String<><col>39<>
+<col> <>
+<col>UUID<><col>String	<><col>36<><><>
+
+1 - Full International Number
+2 - Cover All Cases
+
+
+# Address
+
+<card><table><col>Street		<><col>String	<><col>100		<><col>(USA Max 95)<>
+<col>City<><col>String<><col>100<><col>(USA Max 35)<>
+<col>Zip<><col>String<><col>12<><col>(USA, Iran Max 10) (12 for future proofing)<>
+<col>Country<><col>String<><col>60<><col>(Longest = "The United Kingdom of Great Britain and Northern Ireland")<><><>
+
+
+# Date Time
+
+<card><table><col>Date Time	<><col>String	<><col>19	<><><>
+
+Format:
+
+<cb><v>YYYY<>-<v>MM<>-<v>DD<> <v>HH<>:<v>MM<>:<v>SS<><>
+
+
+# Email
+
+<card><table><col>Email		<><col>String	<><col>320	<><col>{64}@{255}<><><>
+
+
+### Email Parts
+
+<card><table><col>Parts		<><col><v>user_id<>@<v>url<><>
+<col> <>
+<col>User<><col>String / 64<>
+<col>Url<><col>String / 255<><><>
+
+
+# Phone
+
+Full International Number:
+
+<card><table><col>Phone		<><col>String	<><col>15<><><>
+
+Covers Extra Extensions, Everything
+
+<card><table><col>Phone		<><col>String	<><col>50<><><>
+
+
+# File Names
+
+<card><table><col>Path			<><col>String	<><col>1024<><><>
+
+Maximum Lengths By OS:
+
+<card><table><col><b>OS			<><><col><b>File System<>	<><col><b>Path<>			<><col><b>File Name<><>
+<col> <>
+<col>iOS<><col>APFS<><col>1024<><col>255<>
+<col>Linux<><col>ext4 <super><#>1<><><><col>(no limit)<><col>255<>
+<col>MacOS<><col>APFS<><col>1024<><col>255<>
+<col>Raspberry Pi<><col>ext4 <super><#>1<><><><col>(no limit)<><col>255<>
+<col>Windows<><col>NTFS<><col>260 (32,767)<super><#>2<><><><col>255<>
+<col> <>
+<col>Dropbox<><col> <><col> <><col>260<>
+<col>iCloud<><col> <><col> <><col>1024<>
+<col>One Drive<><col> <><col> <><col>400<><><>
+
+1 - The most common file system for Linux / Raspberry Pi is ext4.
+2 - Windows NTFS can technically support up to 32,767 characters but most applications only support up to 260.
+
+Exhaustive List of Sizes (Wikipedia):
+<l>https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits<>
+@
+@ files, directories, paths, operating systems, by os
+
+
+### File Name - Parts
+
+Different parts of a file name:
+
+<card><table><col>Parts<><col><c><v>drive:<>\\<v>root<>\\<v>directory<>\\<v>stem<>.<v>extension<>
+
+<v>Root<>/<v>directory<>/<v>stem<>.<v>extension<><><>
+<col>			<>
+<col>Path<><col><c>/user/home/file_name.text<><>
+<col>Root<><col><c>/<><>
+<col>Parent<><col><c>/user/home<><>
+<col> <>
+<col>Name<><col><c>           file_name.text<><>
+<col>Stem<><col><c>           file_name<><>
+<col>Extension<><col><c>                     text<><><><>
+
+
+# IP Addresses
+
+
+### IP Address - IPV4
+
+A 32-bit web address.
+
+<card><table><col>IPV4		<><col>Integer	<><col>4 Bytes<>
+<col><><col>String<><col>16<><><>
+
+Format:
+
+<cb><v>255<>.<v>255<>.<v>255<>.<v>255<><>
+
+
+### IP Address - IPV6
+
+A 128-bit web address.
+
+<card><table><col>IPV6		<><col>Integer	<><col>16 Bytes<>
+<col><><col>String<><col>39<><><>
+
+Format:
+
+<cb><v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<><>
+
+Segments	8 x 4 Charcters
+Separator	':'
+
+
+### Classless Inter-Domain Routing (CIDR)
+
+<card><table><col>IPV4		<><col>Integer	<><col>7 Bytes<>
+<col><><col>String<><col>19<>
+<col> <>
+<col>IPV6<><col>Integer<><col>19 Bytes<>
+<col><><col>String<><col>43<><><>
+
+Format:
+
+<cb><v>address<>/<v>mask_bits<><>
+
+<cb><v>255<>.<v>255<>.<v>255<>.<v>255<>/<v>32<><>
+
+<cb><v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>/<v>128<><>
+
+
+# Person Names
+
+<card><table><col>First			<><col>String	<><col>100		<><col>(USA Typical \< 25, Max 46)<>
+<col>Last<><col>String<><col>100<><col>(USA Typical \< 25, Max ~45)<>
+<col>Full<><col>String<><col>200<><><>
+@
+@ people, first, last, full
+
+
+
+# Universally Unique Identifier (UUID)
+
+A 128-bit identifier.
+
+<card><table><col>UUID<><col>String	<><col>36<><><>
+
+Format:
+
+<cb><v>xxxxxxxx<>-<v>xxxx<>-<v>Mxxx<>-<v>Nxxx<>-<v>xxxxxxxxxxxx<><>
+
+<c><v>M<><>: UUID Version
+<c><v>N<><>: UUID Variant
+
+
