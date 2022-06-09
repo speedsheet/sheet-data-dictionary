@@ -32,10 +32,13 @@
 <col>IP Address - IPV6<><col>Integer<><col>16 Bytes<>
 <col><><col>String<><col>39<>
 <col> <>
+<col>Password<><col>String<><col>256<>
+<col> <>
 <col>UUID<><col>String	<><col>36<><><>
 
 1 - Full International Number
 2 - Cover All Cases
+
 
 
 # Address
@@ -44,6 +47,10 @@
 <col>City<><col>String<><col>100<><col>(USA Max 35)<>
 <col>Zip<><col>String<><col>12<><col>(USA, Iran Max 10) (12 for future proofing)<>
 <col>Country<><col>String<><col>60<><col>(Longest = "The United Kingdom of Great Britain and Northern Ireland")<><><>
+@
+@ address-only, addresses, addresses-only
+@ mailing
+
 
 
 # Date Time
@@ -53,11 +60,16 @@
 Format:
 
 <cb><v>YYYY<>-<v>MM<>-<v>DD<> <v>HH<>:<v>MM<>:<v>SS<><>
+@
+@ datetime-only, date-time-only, dates, times
+
 
 
 # Email
 
 <card><table><col>Email		<><col>String	<><col>320	<><col>{64}@{255}<><><>
+@
+@ emails, email-only, emails-only
 
 
 ### Email Parts
@@ -67,16 +79,6 @@ Format:
 <col>User<><col>String / 64<>
 <col>Url<><col>String / 255<><><>
 
-
-# Phone
-
-Full International Number:
-
-<card><table><col>Phone		<><col>String	<><col>15<><><>
-
-Covers Extra Extensions, Everything
-
-<card><table><col>Phone		<><col>String	<><col>50<><><>
 
 
 # File Names
@@ -104,6 +106,7 @@ Exhaustive List of Sizes (Wikipedia):
 <l>https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits<>
 @
 @ files, directories, paths, operating systems, by os
+@ file-name-only, file-names-only
 
 
 ### File Name - Parts
@@ -112,7 +115,7 @@ Different parts of a file name:
 
 <card><table><col>Parts<><col><c><v>drive:<>\\<v>root<>\\<v>directory<>\\<v>stem<>.<v>extension<>
 
-<v>Root<>/<v>directory<>/<v>stem<>.<v>extension<><><>
+<v>root<>/<v>directory<>/<v>stem<>.<v>extension<><><>
 <col>			<>
 <col>Path<><col><c>/user/home/file_name.text<><>
 <col>Root<><col><c>/<><>
@@ -123,7 +126,10 @@ Different parts of a file name:
 <col>Extension<><col><c>                     text<><><><>
 
 
+
 # IP Addresses
+@
+@ ip-addresses, ip-address-only
 
 
 ### IP Address - IPV4
@@ -170,6 +176,15 @@ Format:
 <cb><v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>:<v>FFFF<>/<v>128<><>
 
 
+
+# Password
+
+<card><table><col>Password		<><col>String	<><col>128<><><>
+@
+@ passwords, password-only, passwords-only
+
+
+
 # Person Names
 
 <card><table><col>First			<><col>String	<><col>100		<><col>(USA Typical \< 25, Max 46)<>
@@ -177,6 +192,28 @@ Format:
 <col>Full<><col>String<><col>200<><><>
 @
 @ people, first, last, full
+@ persons, person-only, name-only
+
+
+
+# Phone
+
+International Number:
+
+<card><table><col>Phone		<><col>String	<><col>15<><><>
+
+Covering All Possibilities:
+
+<card><table><col>Phone		<><col>String	<><col>50<><><>
+
+
+Examples:
+
+<in>Finland:
+
+<cb>+358 4570 123456<><>
+@
+@ phones, phone-only, phones-only, telephone, telephones, telephone-only
 
 
 
